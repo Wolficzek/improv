@@ -20,6 +20,7 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next()
   }
 
+  console.log(token)
   if (!token) {
     const loginUrl = new URL('/login', origin)
     loginUrl.searchParams.set('callbackUrl', pathname)
