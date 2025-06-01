@@ -20,7 +20,13 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next()
   }
 
-  console.log(token)
+  console.log({
+    headers: req.headers,
+    cookies: req.cookies,
+    secret: process.env.NEXTAUTH_SECRET,
+    token: token,
+  })
+
   if (!token) {
     const loginUrl = new URL('/login', origin)
     loginUrl.searchParams.set('callbackUrl', pathname)
