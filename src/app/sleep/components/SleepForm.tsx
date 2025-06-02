@@ -52,6 +52,8 @@ export const SleepForm = ({ sleepData, ModalButton }: Props) => {
     } else {
       createMutation(data)
     }
+
+    close()
   }
 
   return (

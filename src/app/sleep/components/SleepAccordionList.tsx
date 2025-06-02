@@ -16,13 +16,15 @@ import { SleepForm } from './SleepForm'
 import { formatDate } from '@/utils/utils'
 import { SelectSleepData } from '@/db/types/db-types'
 
-export const AccordionList = ({
+export const SleepAccordionList = ({
   data,
   onDelete,
 }: {
-  data: SelectSleepData[]
+  data?: SelectSleepData[]
   onDelete: (id: number) => void
 }) => {
+  if (!data || !data.length) return <Text>No data</Text>
+
   return (
     <Accordion variant="contained">
       <Stack>

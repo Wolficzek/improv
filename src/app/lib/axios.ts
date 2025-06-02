@@ -11,7 +11,6 @@ const axiosClient = axios.create({
 //Interceptory do logowania - dla testu
 axiosClient.interceptors.request.use(
   (config) => {
-    // console.log('Request:', config)
     return config
   },
   (error) => {

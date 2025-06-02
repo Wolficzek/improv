@@ -49,7 +49,6 @@ export const ToDoForm = ({ ModalButton }: Props) => {
       tasks: listData,
       type: isDaily ? 'daily' : 'reminder',
     }
-    console.log(list)
     close()
   }
 
